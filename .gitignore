@@ -1,2 +1,5 @@
 *.swp
 *.pyc
+.DS_Store
+static/css/*.css
+static/js/stack.js
