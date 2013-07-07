@@ -7,6 +7,9 @@
   <script type="text/javascript" src="{{ url_for('static', filename='js/stack.js' ) }}" ></script>
 </head>
 <body>
+  {% for message in get_flashed_messages() %}
+  <div class="flash">{{message}}</div>
+  {% endfor %}
   {% block body %}{% endblock %}
 </body>
 </html>
