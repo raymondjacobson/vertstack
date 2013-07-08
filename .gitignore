@@ -3,4 +3,4 @@
 .DS_Store
 static/css/*.css
 static/js/stack.js
-static/.sass-cache/
+.sass-cache/
