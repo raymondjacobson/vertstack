@@ -14,7 +14,10 @@
 <meta http-equiv="cleartype" content="on">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
+<!-- Custom fonts -->
+<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
 <!-- /ht Jeremy Keith - http://front.ie/mLXiaS -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css' ) }}" media="all">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css' ) }}" media="all and (min-width: 33.236em)">
@@ -38,10 +41,17 @@
     <header></header>
     
     <div id="main" role="main">
-	  {% for message in get_flashed_messages() %}
-	  <div class="flash">{{message}}</div>
-	  {% endfor %}
-	  {% block body %}{% endblock %}
+      <h1>h1</h1>
+      <h2>h2</h2>
+      <h3>h3</h3>
+      <h4>h4</h4>
+      <h5>h5</h5>
+      <h6>h6</h6>
+      <p>paragraph</p>
+  	  {% for message in get_flashed_messages() %}
+  	  <div class="flash">{{message}}</div>
+  	  {% endfor %}
+  	  {% block body %}{% endblock %}
     </div>
     
     <footer></footer>
