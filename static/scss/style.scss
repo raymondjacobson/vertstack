@@ -7,16 +7,14 @@ $lightblue: #439BBD;
 
 /* GLOBAL UI */
 $header-height: 15em;
-html, body, #container {
-}
 html {
   height: 100%;
+  background: url('/static/images/square_bg.png');
 }
 body {
   max-height: 100%;
 }
 header, footer {
-  text-align: center;
   margin: 0 auto;
 }
 header {
@@ -26,13 +24,31 @@ header {
   background: $blurple;
   height: $header-height;
   border-bottom: 2px solid $bordergray;
+  .liner {
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/square_bg.png');
+  }
+  h1, p{
+    margin: 0 auto;
+    font-family: 'Bree Serif', serif;
+  }
+  h1 {
+    color: lighten($blurple, 20%);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px darken($bordergray, 80%);
+  }
+  p {
+    color: darken($offwhite, 10%);
+  }
 }
+
 #header-wrap {
-}
-html {
-  background: url('/static/images/square_bg.png');
-}
-body {
+  max-width: 60em;
+  margin: 0 auto;
+  padding-top: 3em;
+  text-align: center;
 }
 #container {
   margin-top: $header-height;
@@ -45,6 +61,10 @@ footer {
   bottom: 0;
   height: 2em;
   width: 100%;
+  text-align: center;
+  p {
+    margin: 0 auto;
+  }
 }
 
 /* TYPOGRAPHY */
@@ -52,11 +72,6 @@ footer {
 $biggest: 3.18em;
 h1 {
 	font-size: $biggest;
-}
-.lead {
-  font-family: Verdana, sans-serif;
-  color: lighten($blurple, 90%);
-  /*text-shadow: 1px 1px darken($bordergray, 40%);*/
 }
 h2 {
 	font-size: $biggest * .6;
@@ -67,7 +82,21 @@ h3 {
 a {
   color: $lightblue;
 }
-
+.dots {
+  color: $lightblue;
+  font-size: 2em;
+}
 /* LAYOUTS */
 
-
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.pull-mid {
+  margin: 0 auto;
+}
+.center-text {
+  text-align: center;
+}

@@ -14,7 +14,7 @@
     </dl>
   </form>
   <ul>
-    {% for event in events %}
+    {% for event in return_vals['events'] %}
       <li><h2>{{ event.title }}</h2>{{event.content }}</li>
     {% else %}
       <li>No events</li>

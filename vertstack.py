@@ -54,7 +54,12 @@ def show_timeline():
     db = get_db()
     cur = db.execute('select * from events order by happened_at desc')
     events = cur.fetchall()
-    return render_template('stack.html', events=events)
+    return_vals = {
+        'events': events,
+        'title': 'Vertstack Timeline',
+        'subtitle': 'Express a story in time, vertically. Reach for the sky.',
+    }
+    return render_template('stack.html', return_vals=return_vals)
 
 @app.route("/add", methods=['POST'])
 def add_event():
