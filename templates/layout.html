@@ -36,27 +36,23 @@
 
 <body>
   
+  <header>
+    <div id="header-wrap">
+      <h1 class="lead"></h1>
+    </div>
+  </header>
   <div id="container" class="cf">
     
-    <header></header>
-    
     <div id="main" role="main">
-      <h1>h1</h1>
-      <h2>h2</h2>
-      <h3>h3</h3>
-      <h4>h4</h4>
-      <h5>h5</h5>
-      <h6>h6</h6>
-      <p>paragraph</p>
   	  {% for message in get_flashed_messages() %}
   	  <div class="flash">{{message}}</div>
   	  {% endfor %}
-  	  {% block body %}{% endblock %}
+      <!--{% block body %}{% endblock %}-->
     </div>
     
-    <footer></footer>
     
   </div>
+    <footer>Powered by <a href="#">Vertstack</a> from <a href="#">Raymond Jacobson</a></footer>
 
 </body>
 

@@ -1,9 +1,73 @@
+/* COLORS */
+$offwhite: #FEFEFE;
+$blurple: #3E425B;
+$bordergray: #EEEEEE;
+$dark: #0C0F22;
+$lightblue: #439BBD;
+
+/* GLOBAL UI */
+$header-height: 15em;
+html, body, #container {
+}
+html {
+  height: 100%;
+}
+body {
+  max-height: 100%;
+}
+header, footer {
+  text-align: center;
+  margin: 0 auto;
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $blurple;
+  height: $header-height;
+  border-bottom: 2px solid $bordergray;
+}
+#header-wrap {
+}
+html {
+  background: url('/static/images/square_bg.png');
+}
+body {
+}
+#container {
+  margin-top: $header-height;
+}
+#main {
+  padding-bottom: 2.2em;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 2em;
+  width: 100%;
+}
+
+/* TYPOGRAPHY */
+
+$biggest: 3.18em;
 h1 {
-	font-size: 3.18em;
+	font-size: $biggest;
+}
+.lead {
+  font-family: Verdana, sans-serif;
+  color: lighten($blurple, 90%);
+  /*text-shadow: 1px 1px darken($bordergray, 40%);*/
 }
 h2 {
-	font-size: 2em;
+	font-size: $biggest * .6;
 }
 h3 {
-	font-size: 1.5em;
+  font-size: $biggest * .4;
 }
+a {
+  color: $lightblue;
+}
+
+/* LAYOUTS */
+
+
