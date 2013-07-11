@@ -1,0 +1,151 @@
+/* COLORS */
+$offwhite: #FEFEFE;
+$blurple: #3E425B;
+$bordergray: #EDEDED;
+$dark: #0C0F22;
+$lightblue: #439BBD;
+
+/* GLOBAL UI */
+$header-height: 15em;
+html {
+  height: 100%;
+  background: url('/static/images/square_bg.png');
+}
+body {
+  max-height: 100%;
+}
+header, footer {
+  margin: 0 auto;
+}
+header {
+  z-index: 30;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $blurple;
+  height: $header-height;
+  border-bottom: 2px solid $bordergray;
+  .liner {
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/square_bg.png');
+  }
+  h1, p{
+    margin: 0 auto;
+    font-family: 'Bree Serif', serif;
+  }
+  h1 {
+    color: lighten($blurple, 20%);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px darken($bordergray, 80%);
+  }
+  p {
+    color: darken($offwhite, 10%);
+  }
+}
+
+#header-wrap {
+  max-width: 60em;
+  margin: 0 auto;
+  padding-top: 3em;
+  text-align: center;
+}
+#container {
+  margin-top: $header-height;
+}
+#main {
+  padding-bottom: 2.2em;
+}
+footer {
+  position: relative;
+  bottom: 0;
+  height: 2em;
+  padding-top: 5px;
+  text-align: center;
+  p {
+    margin: 0 auto;
+  }
+}
+
+/* TYPOGRAPHY */
+
+$largest-font: 3.18em;
+h1 {
+	font-size: $largest-font;
+}
+h2 {
+	font-size: $largest-font * .6;
+}
+h3 {
+  font-size: $largest-font * .4;
+}
+a {
+  color: $lightblue;
+}
+.dots {
+  color: $lightblue;
+  font-size: 2em;
+}
+
+/* LAYOUTS */
+
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.pull-mid {
+  margin: 0 auto;
+}
+.center-text {
+  text-align: center;
+}
+.timeline-vr {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 3px solid lighten($blurple, 10%);
+}
+
+$event-width: 140px;
+$event-mid-split: 20px;
+.event-wrap {
+  margin: 50px auto;    
+}
+.event {
+  position: relative;
+  z-index: 20;
+  background-color: #FEFEFE;
+  border: 1px solid $bordergray;
+  &.event-add {
+    height: 10em;
+    margin-bottom: 30px;
+  }
+  &.event-box {
+    width: $event-width;
+    margin: 5px 0 5px 0;
+    &.left {
+      float: left;
+      clear: left;
+    }
+    &.right {
+      float: right;
+      clear: right;
+    }
+  }
+  &.sticker {
+    height: 20px;
+    max-width: 60px;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+    z-index: 20;
+    color: $offwhite;
+    background: $lightblue;
+    border: 1px solid $bordergray;
+    border-radius: 5px;
+    padding-bottom: 6px;
+  }
+}
