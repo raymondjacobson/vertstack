@@ -17,8 +17,7 @@ setWidths = () ->
 setHeights = () ->
 	container_H = $("#container").height()
 	container_OH = $("#container").outerHeight()
-	header_OH = $("header").outerHeight()
-	timeline_vr_height = container_H + (container_OH - container_H)/2 + header_OH
+	timeline_vr_height = container_H + (container_OH - container_H)/2
 	$(".timeline-vr").height(timeline_vr_height)
 
 buildColumns = () ->
