@@ -21,6 +21,7 @@
 
 <!-- /ht Jeremy Keith - http://front.ie/mLXiaS -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css' ) }}" media="all">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css' ) }}" media="all and (min-width: 33.236em)">
 <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 
 <!-- 30em + (1.618em * 2) = 33.236em / Eliminates potential of horizontal scrolling in most cases -->
@@ -48,14 +49,13 @@
   </div>
   </header>
   <div id="container" class="cf">
-    
+    <div class="timeline-vr"></div>
     <div id="main" role="main">
   	  {% for message in get_flashed_messages() %}
   	  <div class="flash">{{message}}</div>
   	  {% endfor %}
-      <!--{% block body %}{% endblock %}-->
+      {% block body %}{% endblock %}
     </div>
-    
     
   </div>
   <footer><p>Powered by <a href="#">Vertstack</a> from <a href="#">Raymond Jacobson</a></p></footer>

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
-  <form action="{{ url_for('add_event') }}" method="post" class="add-event">
+ <!--  <form action="{{ url_for('add_event') }}" method="post" class="add-event">
     <dl>
       <dt>Title:
       <dd><input type="text" size="30" name="title">
@@ -13,11 +13,47 @@
       <dd><input type="submit" value="Post">
     </dl>
   </form>
+  <div class="timeline-vr"></div>
   <ul>
     {% for event in return_vals['events'] %}
       <li><h2>{{ event.title }}</h2>{{event.content }}</li>
     {% else %}
       <li>No events</li>
     {% endfor %}
-  </ul>
+  </ul> -->
+  <div class="event event-add">
+    <p>Add event here</p>
+  </div>
+  <div class="event-wrap">
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+    <div class="event event-box"></div>
+  </div>
 {% endblock %}
