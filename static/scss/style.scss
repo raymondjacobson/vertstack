@@ -5,6 +5,10 @@ $bordergray: #EDEDED;
 $dark: #0C0F22;
 $lightblue: #439BBD;
 
+$picture: #FFBA45;
+$youtube: #B86340;
+$link: lighten($lightblue, 10%);
+
 /* GLOBAL UI */
 $header-height: 15em;
 html {
@@ -82,6 +86,44 @@ h3 {
 a {
   color: $lightblue;
 }
+i.big {
+  width: 100px;
+  cursor: pointer;
+  border: 0;
+  font-size: 2em;
+  padding: 5px;
+  &.icon-youtube {
+    color: $youtube;
+  }
+  &.icon-camera-retro {
+    color: $picture;
+  }
+  &.icon-link {
+    color: $link;
+  }
+  &:hover {
+    background: darken($offwhite, 5%);
+  }
+}
+.btn {
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Bree Serif', serif;
+  background: $offwhite;
+  border: none;
+  color: $lightblue;
+  border: 2px solid $lightblue;
+  border-radius: 4px;
+  &.btn-post {
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+  }
+  &:hover {
+    border-color: lighten($lightblue, 20%);
+    color: lighten($lightblue, 20%);
+  }
+}
 .dots {
   color: $lightblue;
   font-size: 2em;
@@ -101,12 +143,22 @@ a {
 .center-text {
   text-align: center;
 }
+.vr-small {
+  height: 30px;
+}
 .timeline-vr {
   z-index: 10;
   position: fixed;
   top: $header-height;
   left: 50%;
   border-left: 3px solid lighten($blurple, 10%);
+}
+.gray-border-vr {
+  float: left;
+  color: $bordergray;
+  border-left: 1px solid $bordergray;
+  height: 11em;
+  margin: 2em 40px 2em 40px;
 }
 
 $event-width: 140px;
@@ -117,11 +169,25 @@ $event-mid-split: 20px;
 .event {
   position: relative;
   z-index: 20;
-  background-color: #FEFEFE;
+  background-color: $offwhite;
   border: 1px solid $bordergray;
   &.event-add {
-    height: 10em;
+    height: 15em;
     margin-bottom: 30px;
+    .left-group, .right-group {
+      float: left;
+    }
+    .left-group {
+      //border-bottom: 1px solid $bordergray;
+      width: 60%;
+    }
+    #icon-options {
+      margin-left: 20px;
+    }
+    .right-group {
+      height: 100px;
+      width: 20%;
+    }
   }
   &.event-box {
     width: $event-width;
@@ -146,5 +212,34 @@ $event-mid-split: 20px;
     border: 1px solid $bordergray;
     border-radius: 5px;
     padding-bottom: 6px;
+  }
+}
+
+/* FORMS */
+
+form {
+  input, textarea {
+    display: block;
+    font-family: 'Oxygen', Helvetica, sans-serif;
+    font-size: 15px;
+    padding: 9px;  
+    margin: 10px 0 5px 10px;
+    border: none;
+    resize: none; 
+    background: $offwhite;  
+    width: 100%;
+    //background: #000; 
+  }
+  input:focus, textarea:focus {
+    outline: none;
+  }
+  input {
+  }
+  textarea {
+    height: 100px;  
+    line-height: 150%;  
+  }
+  &.add-event {
+
   }
 }

@@ -64,12 +64,12 @@ def show_timeline():
 @app.route("/add", methods=['POST'])
 def add_event():
     db = get_db()
-    forms = [request.form['title'],
-             request.form['happened_at'],
+    forms = [request.form['happened_at'],
              request.form['content'],
+             request.form['media_type'],
              request.form['media_resource']]
-    db.execute('insert into events (title, happened_at, content, \
-        media_resource) values (?, ?, ?, ?)', forms)
+    db.execute('insert into events (happened_at, content, \
+        media_type, media_resource) values (?, ?, ?, ?)', forms)
     db.commit()
     flash('New event posted')
     return redirect(url_for('show_timeline'))

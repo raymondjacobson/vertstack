@@ -23,7 +23,24 @@
   </ul> -->
   <div class="timeline-vr"></div>
   <div class="event event-add">
-    <p>Add event here</p>
+    <form action="{{ url_for('add_event') }}" method="post" class="form add-event">
+      <div class="left-group">
+        <textarea name="content" placeholder="Write something here..."></textarea>
+        
+        <input type="text" name="media_resource" placeholder="Paste a link and select the type of your media here...">
+        <div id="icon-options">
+          <i alt="photo" class="icon-camera-retro big"></i>
+          <i alt="youtube" class="icon-youtube big"></i>
+          <i alt="other" class="icon-link big"></i>
+        </div>
+      </div>
+      <div class="gray-border-vr vr-small"></div>
+      
+      <div class="right-group">
+        <input class=".three-col" type="date" name="happened_at">
+        <button class="btn btn-post" type="submit">Post!</button>
+      </div>
+    </form>
   </div>
   <div class="event-wrap">
     <div class="event event-box"></div>
