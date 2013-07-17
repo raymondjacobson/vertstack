@@ -2,6 +2,8 @@ $ ->
 	buildColumns()
 	setHeights()
 	setWidths()
+	setInitialInput()
+	checkInputs()
 
 ##########################
 # LAYOUT FUNCTIONS
@@ -35,3 +37,22 @@ buildColumns = () ->
 	  else
 	    left_column_height += events.eq(i).removeClass("right").addClass("left").outerHeight(true)
 	  i++
+
+##########################
+# INPUT FUNCTIONS
+##########################
+
+setInitialInput = () ->
+	$("i.icon-camera-retro").addClass('icon-selected')
+	$("input[name='media_type']").val('image')
+
+checkInputs = () ->
+	$("#icon-options i").click ->
+		$("#icon-options i").removeClass('icon-selected')
+		$(this).addClass('icon-selected')
+		if $(this).hasClass('icon-camera-retro')
+			$("input[name='media_type']").val('image')
+		if $(this).hasClass('icon-youtube')
+			$("input[name='media_type']").val('youtube')
+		if $(this).hasClass('icon-link')
+			$("input[name='media_type']").val('hyperlink')

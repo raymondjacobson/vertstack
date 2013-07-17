@@ -101,7 +101,7 @@ i.big {
   &.icon-link {
     color: $link;
   }
-  &:hover {
+  &:hover, &.icon-selected {
     background: darken($offwhite, 5%);
   }
 }
