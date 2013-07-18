@@ -65,6 +65,7 @@ footer {
   text-align: center;
   z-index: 30;
   border-top: 1px solid $bordergray;
+  border-bottom: 1px solid $bordergray;
   background: $offwhite;
   p {
     margin: 0 auto;
@@ -85,6 +86,20 @@ h3 {
 }
 a {
   color: $lightblue;
+}
+h4.event-happened {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: -1px;
+  font-size: 14px;
+  font-family: 'Bree Serif', serif;
+  color: darken($bordergray, 20%);
+  margin-bottom: 0;
+}
+p.event-content {
+  color: darken($bordergray, 80%);
+  margin-bottom: 0;
+  margin-left: 10px;
 }
 i.big {
   width: 100px;
@@ -199,6 +214,26 @@ $event-mid-split: 20px;
     &.right {
       float: right;
       clear: right;
+    }
+    h4, p, a, img {
+      padding: 10px;
+    }
+    a {
+      height: 100%;
+      img:hover {
+        opacity: 0.5;
+      }
+    }
+    img, iframe {
+      max-width: 90%;
+    }
+    iframe {
+      overflow: hidden;
+      height: 200px;
+    }
+    .event-media {
+      text-align: center;
+      margin-bottom: 20px;
     }
   }
   &.sticker {

@@ -44,8 +44,22 @@
     </form>
   </div>
   <div class="event-wrap">
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
+    {% for event in return_vals['events'] %}
+      {% if 'happened_at' in event %}
+        <div class="event event-box">
+          <h4 class="event-happened">{{event['happened_at'].strftime("%b %d %Y")}}</h4>
+          <p class="event-content">{{event['content'] }}</p>
+          <div class="event-media">{{event['media_resource']|safe}}</div>
+        </div>
+      {% else %}
+        {{event|safe}}
+      {% endif %}
+    {% else %}
+      <div class="event event-box">
+        <p>You have yet to enter an event.</p>
+      </div>
+    {% endfor %}
+   <!--  <div class="event event-box"></div>
     <div class="event event-box"></div>
     <div class="event event-box"></div>
     <div class="event event-box"></div>
@@ -75,6 +89,6 @@
     <div class="event event-box"></div>
     <div class="event event-box"></div>
     <div class="event event-box"></div>
-    <div class="event event-box"></div>
+    <div class="event event-box"></div> -->
   </div>
 {% endblock %}
