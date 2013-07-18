@@ -4,3 +4,4 @@
 static/css/style.css
 static/js/stack.js
 .sass-cache/
+db/*
