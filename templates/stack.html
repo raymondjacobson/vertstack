@@ -44,8 +44,16 @@
     </form>
   </div>
   <div class="event-wrap">
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
+    {% for event in return_vals['events'] %}
+      <div class="event event-box">
+        <p>{{event['content'] }}</p>
+        <p>{{event['happened_at']}}</p>
+        {{event['media_resource']|safe}}
+      </div>
+    {% else %}
+      <p>No events</p>
+    {% endfor %}
+   <!--  <div class="event event-box"></div>
     <div class="event event-box"></div>
     <div class="event event-box"></div>
     <div class="event event-box"></div>
@@ -75,6 +83,6 @@
     <div class="event event-box"></div>
     <div class="event event-box"></div>
     <div class="event event-box"></div>
-    <div class="event event-box"></div>
+    <div class="event event-box"></div> -->
   </div>
 {% endblock %}
