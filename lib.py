@@ -13,7 +13,7 @@ def get_media_html(resource, type):
 	elif type == 'youtube':
 		youtube_id = resource.split('v=', 1)[1]
 		resource = youtube_id
-		html_resource = "<iframe src='//www.youtube.com/embed/{0}' frameborder='0' allowfullscreen></iframe>"
+		html_resource = "<iframe src='//www.youtube.com/embed/{0}?HD=1;rel=0;showinfo=0;controls=0' frameborder='0' allowfullscreen></iframe>"
 	elif type == 'hyperlink':
 		# req = urllib2.Request(resource)
 		# res = urllib2.urlopen(req)
