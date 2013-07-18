@@ -13,10 +13,10 @@ import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
     render_template, flash, _app_ctx_stack
 
-from lib import get_formatted_date, get_media_html
+from lib import get_date_sticker, get_formatted_date, get_media_html
 
 # Configuration
-DB = '/tmp/vertstack.db'
+DB = 'db/vertstack.db'
 DEBUG = True
 SECRET_KEY = 'dev key'
 USERNAME = 'admin'
@@ -57,14 +57,18 @@ def show_timeline():
     cur = db.execute('select * from events order by happened_at desc')
     events = cur.fetchall()
     fixed_events = []
+    last_yr = 99999999
     for event in events:
-        print event
         fixed_event = {
             'content': event['content'],
             'happened_at': get_formatted_date(event['happened_at']),
             'media_resource': get_media_html(event['media_resource'],
                                              event['media_type'])
         }
+        cur_yr = int(fixed_event['happened_at'].strftime("%Y"))
+        if cur_yr < last_yr:
+            last_yr = cur_yr
+            fixed_events.append(get_date_sticker(cur_yr))
         fixed_events.append(fixed_event)
     return_vals = {
         'events': fixed_events,
@@ -87,6 +91,6 @@ def add_event():
     return redirect(url_for('show_timeline'))
 
 if __name__ == "__main__":
-    init_db()
+    # init_db()
     app.run(debug=True)
 

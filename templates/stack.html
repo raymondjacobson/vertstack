@@ -45,13 +45,19 @@
   </div>
   <div class="event-wrap">
     {% for event in return_vals['events'] %}
-      <div class="event event-box">
-        <p>{{event['content'] }}</p>
-        <p>{{event['happened_at']}}</p>
-        {{event['media_resource']|safe}}
-      </div>
+      {% if 'happened_at' in event %}
+        <div class="event event-box">
+          <h4 class="event-happened">{{event['happened_at'].strftime("%b %d %Y")}}</h4>
+          <p class="event-content">{{event['content'] }}</p>
+          <div class="event-media">{{event['media_resource']|safe}}</div>
+        </div>
+      {% else %}
+        {{event|safe}}
+      {% endif %}
     {% else %}
-      <p>No events</p>
+      <div class="event event-box">
+        <p>You have yet to enter an event.</p>
+      </div>
     {% endfor %}
    <!--  <div class="event event-box"></div>
     <div class="event event-box"></div>

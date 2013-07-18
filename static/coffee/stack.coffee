@@ -29,8 +29,8 @@ buildColumns = () ->
 	i = 0
 
 	while i < events.length
-		if !events.eq(i).hasClass('sticker')
-	  	events.eq(i).height Math.floor(Math.random() * 400 + 200)
+		# if !events.eq(i).hasClass('sticker')
+	 #  	events.eq(i).height Math.floor(Math.random() * 400 + 200)
 	  
 	  if left_column_height > right_column_height
 	    right_column_height += events.eq(i).removeClass("left").addClass("right").outerHeight(true)
