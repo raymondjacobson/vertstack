@@ -1,26 +1,5 @@
 {% extends "layout.html" %}
 {% block body %}
- <!--  <form action="{{ url_for('add_event') }}" method="post" class="add-event">
-    <dl>
-      <dt>Title:
-      <dd><input type="text" size="30" name="title">
-      <dt>Happened at:
-      <dd><input type="date" name="happened_at">
-      <dt>Content:
-      <dd><textarea name="content" rows="5" cols="40"></textarea>
-      <dt>Media:
-      <dd><input type="text" size="30" name="media_resource">
-      <dd><input type="submit" value="Post">
-    </dl>
-  </form>
-  <div class="timeline-vr"></div>
-  <ul>
-    {% for event in return_vals['events'] %}
-      <li><h2>{{ event.title }}</h2>{{event.content }}</li>
-    {% else %}
-      <li>No events</li>
-    {% endfor %}
-  </ul> -->
   <div class="timeline-vr"></div>
   <div class="event event-add">
     <form action="{{ url_for('add_event') }}" method="post" class="form add-event">
@@ -59,36 +38,5 @@
         <p>You have yet to enter an event.</p>
       </div>
     {% endfor %}
-   <!--  <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box sticker">2013</div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box sticker">2012</div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div>
-    <div class="event event-box"></div> -->
-  </div>
+   </div>
 {% endblock %}
